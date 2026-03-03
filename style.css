@@ -1,6 +1,4 @@
-/* ===========================
-   VARIABLES Y RESET
-=========================== */
+
 :root {
   --fondo: #0e0e12;
   --superficie: #18181f;
@@ -30,9 +28,7 @@ body {
   min-height: 100vh;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+
 .header {
   background-color: var(--superficie);
   border-bottom: 1px solid var(--borde);
@@ -72,18 +68,14 @@ body {
   color: var(--acento);
 }
 
-/* ===========================
-   MAIN / FORM LAYOUT
-=========================== */
+
 .main {
   max-width: 1140px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
 
-/* ===========================
-   LAYOUT DOS COLUMNAS
-=========================== */
+
 .layout-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -110,9 +102,7 @@ form {
   gap: 8px;
 }
 
-/* ===========================
-   SECCIONES
-=========================== */
+
 .seccion {
   background-color: var(--superficie);
   border: 1px solid var(--borde);
@@ -153,9 +143,7 @@ form {
   flex-shrink: 0;
 }
 
-/* ===========================
-   GRIDS Y CAMPOS
-=========================== */
+
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -219,9 +207,6 @@ select.invalido {
   display: block;
 }
 
-/* ===========================
-   FILA DINÁMICA (teléfonos / cursos)
-=========================== */
 .fila-dinamica {
   display: flex;
   gap: 10px;
@@ -254,9 +239,7 @@ select.invalido {
   color: var(--rojo);
 }
 
-/* ===========================
-   BOTONES
-=========================== */
+
 .btn-agregar {
   background-color: transparent;
   border: 1px dashed var(--borde);
@@ -304,9 +287,7 @@ select.invalido {
   transform: translateY(0);
 }
 
-/* ===========================
-   TOTAL
-=========================== */
+
 .total-box {
   display: flex;
   align-items: center;
@@ -331,9 +312,7 @@ select.invalido {
   color: var(--acento);
 }
 
-/* ===========================
-   RESUMEN
-=========================== */
+
 .hidden {
   display: none;
 }
@@ -365,7 +344,6 @@ select.invalido {
   font-weight: 700;
 }
 
-/* Tabla del resumen */
 .tabla-resumen {
   width: 100%;
   border-collapse: collapse;
