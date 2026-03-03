@@ -1,0 +1,431 @@
+/* ===========================
+   VARIABLES Y RESET
+=========================== */
+:root {
+  --fondo: #0e0e12;
+  --superficie: #18181f;
+  --borde: #2a2a35;
+  --acento: #c8f04d;
+  --acento-hover: #d9ff5a;
+  --texto: #f0f0f0;
+  --texto-suave: #8888a0;
+  --rojo: #ff5c5c;
+  --radio: 12px;
+  --fuente-titulo: 'Syne', sans-serif;
+  --fuente-cuerpo: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.header {
+  background-color: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+  padding: 40px 0 32px;
+}
+
+.header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header-tag {
+  display: inline-block;
+  background-color: var(--acento);
+  color: #0e0e12;
+  font-family: var(--fuente-titulo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--texto);
+}
+
+.header-title em {
+  font-style: normal;
+  color: var(--acento);
+}
+
+/* ===========================
+   MAIN / FORM LAYOUT
+=========================== */
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ===========================
+   LAYOUT DOS COLUMNAS
+=========================== */
+.layout-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.col-form,
+.col-cursos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .layout-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
+.seccion {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.seccion-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.seccion-titulo h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--acento);
+  color: #0e0e12;
+  font-family: var(--fuente-titulo);
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   GRIDS Y CAMPOS
+=========================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 540px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  background-color: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  color: var(--texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  padding: 10px 14px;
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+  appearance: none;
+}
+
+input::placeholder {
+  color: var(--texto-suave);
+  opacity: 0.5;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--acento);
+}
+
+input.invalido,
+select.invalido {
+  border-color: var(--rojo);
+}
+
+.error {
+  font-size: 11px;
+  color: var(--rojo);
+  min-height: 14px;
+  display: block;
+}
+
+/* ===========================
+   FILA DINÁMICA (teléfonos / cursos)
+=========================== */
+.fila-dinamica {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.fila-dinamica input,
+.fila-dinamica select {
+  flex: 1;
+}
+
+.btn-eliminar {
+  background-color: transparent;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  color: var(--texto-suave);
+  cursor: pointer;
+  font-size: 16px;
+  height: 38px;
+  width: 38px;
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-eliminar:hover {
+  border-color: var(--rojo);
+  color: var(--rojo);
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+.btn-agregar {
+  background-color: transparent;
+  border: 1px dashed var(--borde);
+  border-radius: 8px;
+  color: var(--acento);
+  cursor: pointer;
+  font-family: var(--fuente-cuerpo);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 16px;
+  transition: border-color 0.2s, background-color 0.2s;
+  align-self: flex-start;
+}
+
+.btn-agregar:hover {
+  border-color: var(--acento);
+  background-color: rgba(200, 240, 77, 0.05);
+}
+
+.campo-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-submit {
+  background-color: var(--acento);
+  border: none;
+  border-radius: 10px;
+  color: #0e0e12;
+  cursor: pointer;
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background-color: var(--acento-hover);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+   TOTAL
+=========================== */
+.total-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(200, 240, 77, 0.07);
+  border: 1px solid rgba(200, 240, 77, 0.25);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 4px;
+}
+
+.total-box span {
+  font-size: 13px;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.total-box strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  color: var(--acento);
+}
+
+/* ===========================
+   RESUMEN
+=========================== */
+.hidden {
+  display: none;
+}
+
+.resumen {
+  background-color: var(--superficie);
+  border: 1px solid var(--acento);
+  border-radius: var(--radio);
+  padding: 28px 24px;
+  margin-top: 24px;
+  animation: aparece 0.4s ease;
+}
+
+@keyframes aparece {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.resumen-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.resumen-header h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Tabla del resumen */
+.tabla-resumen {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-resumen caption {
+  font-family: var(--fuente-titulo);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.tabla-resumen th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.tabla-resumen td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--texto);
+}
+
+.tabla-resumen tr:last-child td {
+  border-bottom: none;
+}
+
+.resumen-bloque {
+  margin-bottom: 20px;
+}
+
+.resumen-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borde);
+  margin-top: 16px;
+}
+
+.resumen-total span {
+  font-size: 13px;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+}
+
+.resumen-total strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  color: var(--acento);
+}

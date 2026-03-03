@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscripción a Cursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <span class="header-tag">Electiva Disciplinar IV</span>
+      <h1 class="header-title">Inscripción<br><em>a Cursos</em></h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <form id="formulario" novalidate>
+
+      <div class="layout-cols">
+
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="col-form">
+
+          <!-- SECCIÓN: Datos personales -->
+          <section class="seccion">
+            <div class="seccion-titulo">
+              <span class="num">01</span>
+              <h2>Datos Personales</h2>
+            </div>
+
+            <div class="grid-2">
+              <div class="campo">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" placeholder="Ej: Juan Carlos" />
+                <span class="error" id="err-nombres"></span>
+              </div>
+              <div class="campo">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" placeholder="Ej: Pérez Gómez" />
+                <span class="error" id="err-apellidos"></span>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="campo">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" placeholder="Ej: 1001234567" maxlength="12" inputmode="numeric" />
+                <span class="error" id="err-cedula"></span>
+              </div>
+              <div class="campo">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" placeholder="correo@ejemplo.com" />
+                <span class="error" id="err-correo"></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECCIÓN: Teléfonos -->
+          <section class="seccion">
+            <div class="seccion-titulo">
+              <span class="num">02</span>
+              <h2>Teléfonos</h2>
+            </div>
+
+            <div id="contenedor-telefonos">
+              <!-- Los teléfonos se agregan dinámicamente -->
+            </div>
+            <span class="error" id="err-telefonos"></span>
+
+            <button type="button" class="btn-agregar" id="btn-agregar-tel">
+              + Agregar teléfono
+            </button>
+          </section>
+
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="col-cursos">
+
+          <!-- SECCIÓN: Cursos -->
+          <section class="seccion">
+            <div class="seccion-titulo">
+              <span class="num">03</span>
+              <h2>Cursos Disponibles</h2>
+            </div>
+
+            <div id="contenedor-cursos">
+              <!-- Los cursos se agregan dinámicamente -->
+            </div>
+            <span class="error" id="err-cursos"></span>
+
+            <button type="button" class="btn-agregar" id="btn-agregar-curso">
+              + Agregar curso
+            </button>
+
+            <div class="total-box">
+              <span>Total a pagar:</span>
+              <strong id="total-display">$ 0</strong>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+      <!-- BOTÓN ENVIAR -->
+      <div class="campo-submit">
+        <button type="submit" class="btn-submit">Inscribirse →</button>
+      </div>
+
+    </form>
+
+    <!-- RESUMEN -->
+    <section id="resumen" class="resumen hidden">
+      <div class="resumen-header">
+        <span class="num">✓</span>
+        <h2>Resumen de Inscripción</h2>
+      </div>
+      <div id="resumen-contenido"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
