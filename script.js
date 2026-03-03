@@ -37,6 +37,11 @@ function agregarTelefono() {
   input.type = 'tel';
   input.id   = id;
   input.placeholder = 'Ej: 3001234567';
+  input.maxLength = 10;
+  input.inputMode = 'numeric';
+  input.addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+  });
 
   var btnEliminar = document.createElement('button');
   btnEliminar.type = 'button';
