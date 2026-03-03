@@ -9,8 +9,8 @@
   --texto-suave: #8888a0;
   --rojo: #ff5c5c;
   --radio: 12px;
-  --fuente-titulo: 'Syne', sans-serif;
-  --fuente-cuerpo: 'DM Sans', sans-serif;
+  --fuente-titulo: 'Manrope', sans-serif;
+  --fuente-cuerpo: 'Inter', sans-serif;
 }
 
 *, *::before, *::after {
@@ -406,4 +406,25 @@ select.invalido {
   font-family: var(--fuente-titulo);
   font-size: 1.6rem;
   color: var(--acento);
+}
+
+.footer {
+  border-top: 1px solid var(--borde);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: var(--texto-suave);
+  letter-spacing: 0.03em;
+}
+
+.footer-inner strong {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  color: var(--acento);
+  letter-spacing: 0.06em;
 }
